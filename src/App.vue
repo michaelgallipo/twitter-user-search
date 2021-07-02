@@ -12,6 +12,36 @@ export default {
   name: "app",
   components: {
     HelloWorld
+  },
+  data: function() {
+    return {
+      twitterId: "",
+      userId: "",
+      name: "",
+      pinned_tweet_id: "",
+      pinned_tweet_text: "",
+      display: false
+    }
+  },
+  methods: {
+    getData: function() {
+      const token = process.env.BEARER_TOKEN;
+      axios
+      .get("https://api.twitter.com/2/users/by?usernames=" + this.twitterId + 
+      "&expansions=pinned_tweet_id", {
+        headers: {
+          'User-Agent': "v2UserLookupJS",
+          'Authorization': `Bearer ${token}`
+  }
+})
+      .then(response => {
+        // this.tutorData = response.data;
+        console.log(this.response);
+      })
+      .catch(error => {
+        this.errors = error.response.data.errors;
+      });
+    }
   }
 };
 </script>
