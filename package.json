@@ -12,7 +12,8 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-axios-cors": "^1.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
