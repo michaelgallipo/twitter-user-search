@@ -60,7 +60,7 @@ export default {
       this.pinnedTweetText = "";
       this.pinnedTweetId = "";
       axios
-        .get("http://cryptic-cove-28362.herokuapp.com/" + this.twitterId)
+        .get("https://cryptic-cove-28362.herokuapp.com/" + this.twitterId)
         // .get("http://localhost:5000/" + this.twitterId)
         .then(response => {
           this.userId = response.data.data.id;
